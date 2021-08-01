@@ -9,7 +9,7 @@
   body {
     margin: 0;
     font-family: "微軟正黑體", Arial, sans-serif;
-    background-image: url("../hw0730/RWD/bg.jpg");
+    background-image: url("/RWD/bg.jpg");
   }
   .container {
     max-width: 100%;
@@ -155,7 +155,7 @@
     background: var(--main-color);
     height: auto;
     border-bottom: 10px solid #000;
-    border-image: url("../hw0730/RWD/rr.png") 30 30 round;
+    border-image: url("/RWD/rr.png") 30 30 round;
   }
   main {
     grid-area: main;
