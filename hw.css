@@ -340,7 +340,7 @@
   .main-title2 img{
     width: 100vh;
     display: flex;
-    margin: 20px auto;
+    margin: 20px 49px;
   
   
   
@@ -351,7 +351,7 @@
   .box{
     height: auto;
     border: 2px solid var(--main-color);
-  width: 700px;
+  width: 600px;
   }
   .main-2-2 img{
   display: flex;
