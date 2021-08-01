@@ -154,7 +154,8 @@
     grid-area: nav;
     background: var(--main-color);
     height: auto;
-    border-bottom: 10px solid #000;
+    margin: -10px;
+    border-bottom: 10px solid transparent;
     border-image: url("/RWD/rr.png") 30 30 round;
   }
   main {
