@@ -154,7 +154,7 @@
     grid-area: nav;
     background: var(--main-color);
     height: auto;
-    margin: -10px;
+    border-top: 0 solid transparent;
     border-bottom: 10px solid transparent;
     border-image: url("/RWD/rr.png") 30 30 round;
   }
@@ -352,7 +352,7 @@
   .box{
     height: auto;
     border: 2px solid var(--main-color);
-  width: 600px;
+  width: 80%;
   }
   .main-2-2 img{
   display: flex;
