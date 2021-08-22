@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        :root {
+            --main-color: rgb(221, 92, 172);
+            --main-btn-color: rgb(187, 66, 141);
+            --main-btn-hover-color: rgb(129, 35, 93);
+        }
+
+        body {
+            background-color: #eee;
+        }
+
+        .btn {
+            border-radius: 0%;
+        }
+
+        .btn-primary {
+            background: var(--main-btn-color);
+            border: 1px solid var(--main-btn-color);
+        }
+
+        .btn-primary:hover,
+        .btn-primary:focus {
+            background: var(--main-btn-hover-color);
+            border: 1px solid var(--main-btn-hover-color);
+        }
+
+        .btn-second {
+            background: rgb(255, 253, 253, .7);
+
+            width: 110px;
+            border: 1px solid var(--main-btn-color);
+            color: var(--main-color);
+            left: 65%;
+            bottom: 10%;
+            border-radius: 0%;
+        }
+
+        .btn-third {
+            background: rgb(255, 253, 253, .7);
+            border: 2px solid transparent;
+            width: auto;
+
+        }
+
+        @media screen and (max-width: 768px) {
+            .btn-second {
+                left: 55%;
+
+            }
+
+            .btn-third {
+                margin-bottom: 5px;
+                width: 100%;
+
+            }
+        }
+
+        .theme h5 {
+            padding-top: 8px;
+        }
+
+        .line {
+            width: 40px;
+            margin: 0 auto;
+        }
+
+
+
+
+        .main-header {
+            background: #eee;
+            padding: 5px 0;
+        }
+
+        .logo {
+            height: 48px;
+        }
+
+        .menu {
+            display: flex;
+        }
+
+        .menu li {
+            height: 100%;
+        }
+
+        .menu a {
+            display: flex;
+            height: 100%;
+            align-items: center;
+            color: #666;
+            text-decoration: none;
+            padding: 0 10px;
+        }
+
+        /* align-content 屬性會操控整個內容(content)，並且在相交軸上以項目來做對齊，所以會發現同一行彈性項目的對齊方式都在那行的空間裡，像是在為整體位置做調整，而不是在對齊一條線。
+
+align-items 屬性會操控彈性行中的每個彈性項目(items)，並且在相交軸上的彈性行內設定某條假想彈性線來做對齊 */
+        .menu a:hover {
+            background: #eee;
+        }
+
+        @media screen and (max-width: 768px) {
+            .menu {
+                display: none;
+            }
+        }
+
+        .banner {
+            min-height: 90vh;
+            /* CSS min-height 屬性的功能是用來設定網頁元素的最低高度限制，例如圖片的最低高度、DIV 區塊的最低高度或是一個段落的最低高度，都可以用 CSS min-height 屬性來設定，有的時候，網頁中的元素大小會隨著網頁本身的條件而改變，高度也會因此而改變，我們可以用 CSS min-height 屬性來限制某個元素的最小高度，目前所有主流的瀏覽器都支援 CSS min-height 屬性的效果。 */
+
+            background: url("../0806/切版練習/images/long-hair.jpg") center center no-repeat;
+            background-size: cover;
+            width: 95%;
+            margin: 0 auto;
+        }
+
+        .banner-mask {
+            background: rgba(0, 0, 0, .5);
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+
+        }
+
+        .banner-con {
+            z-index: 2;
+        }
+
+        .slogan {
+
+            padding-top: 120px;
+            color: #fff;
+            padding-bottom: 50px;
+
+        }
+
+        .logo-big {
+            width: 200px;
+        }
+
+        .search-area {
+            border: 2px solid var(--main-color);
+            padding: 2px;
+            max-width: 540px;
+            margin: 0 auto;
+            color: #fff;
+        }
+
+        .search-area .btn {
+            border-radius: 0%;
+        }
+
+        .search-place {
+            border-right: 2px solid var(--main-color);
+            padding-right: 10px;
+            padding-left: 10px;
+        }
+
+        .search-input {
+            flex-grow: 1;
+            /* The flex-grow CSS property sets the flex grow factor of a flex item's main size. */
+            background: none;
+            border: none;
+            color: #fff;
+            height: 39px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .search-area {
+                width: 90%;
+                flex-wrap: wrap;
+                height: 46px;
+                margin-bottom: 66px;
+            }
+
+            .search-area .btn {
+                width: 100%;
+                text-align: center;
+                margin-top: 6px;
+            }
+        }
+
+        .feature {
+            margin-top: 30px;
+            padding: 95px 0;
+            background: url("../0806/切版練習/images/bg_icon.png");
+        }
+
+        .feature img {
+            width: 160px;
+        }
+
+        .theme .hot img {
+            width: 250px;
+        }
+
+
+        .h1 {
+            font-weight: normal;
+        }
+
+        .theme h4 {
+            padding: 0px 16px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            text-shadow: black 0.1em 0.1em 0.2em;
+        }
+
+       
+        
+        .card-1{
+            background: url("../0806/切版練習/images/22736_8.jpg")  ;
+            background-position: 50% 40%;
+            width:100%;
+            height: 300px;
+            object-fit: cover;
+            position: relative;
+            background-size:100%;
+        }
+        .card-2{
+            background: url("../0806/切版練習/images/138974.jpg") ;
+            background-position: center;
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            position: relative;
+            
+        }
+        .card-3{
+            background: url("../0806/切版練習/images/141965.jpg") ;
+            background-position: center;
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            position: relative;
+           
+        }
+
+        .section-mask {
+
+            background: rgba(0, 0, 0, .3);
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+
+        }
+
+        @media screen and (max-width: 768px) {
+            .h1 {
+                font-weight: lighter;
+            }
+
+            .theme img {
+                padding: 10px 20px;
+            }
+
+            .theme button {
+                padding: 0;
+            }
+
+            .trend-rwd img {
+                object-fit: cover;
+                width: 250px;
+                height: 250px;
+                border-radius: 50%;
+            }
+
+            .trend img {
+                width: 100%;
+                height: 100%;
+            }
+
+            .trend-card {
+                padding: 20px;
+            }
+
+            .trend h4 {
+                font-size: 15px;
+            }
+
+        }
+
+        @media screen and (min-width:768px) {
+            .trend-rwd {
+                display: none;
+            }
+        }
+
+        .phone {
+            background: #ccc;
+            width: 95%;
+            height: 300px;
+            margin: 0 auto;
+        }
+
+        .phone .h6 {
+            color: var(--main-color);
+        }
+
+        .people {
+
+            background: url("../0806/切版練習/images/slide2.jpg") center center no-repeat;
+            background-size: cover;
+            width: 95%;
+            height: 300px;
+            margin: 0 auto;
+        }
+
+        .prove {
+            border-right: 2px dotted #fff;
+
+
+            color: #fff;
+
+
+        }
+
+        @media screen and (max-width: 768px) {
+            .phone-logo {
+                flex-direction: column;
+            }
+
+            .phone .h6 {
+                display: none;
+            }
+
+            .people {
+                height: auto;
+            }
+
+            .prove {
+                border-right: transparent;
+            }
+        }
+
+        .f-bottom .f-logo1 {
+            width: 32px;
+
+        }
+
+        .f-bottom a {
+
+            text-decoration: none;
+            color: gray;
+
+        }
+
+        .join {
+            /* background-color: greenyellow; */
+            display: flex;
+            border: 1px solid var(--main-color);
+            margin: 10px;
+
+           
+
+
+        }
+
+        .join p {
+            
+            left: 46%;
+            top: 12px;
+            color: var(--main-color);
+            font-size: 8px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="d-flex justify-content-between">
+                <div class="d-flex">
+                    <a href="" class="me-3"><img class="logo" src="../0806/切版練習/images/logo.png" alt=""></a>
+                    <ul class="list-unstyled menu m-0">
+                        <li><a href="">找髮型</a></li>
+                        <li><a href="">找設計師</a></li>
+                        <li><a href="">美髮誌</a></li>
+                    </ul>
+                </div>
+                <div class="d-flex">
+                    <ul class="list-unstyled menu m-0">
+                        <li><a href="">註冊</a></li>
+                        <li><a href="">登入</a></li>
+                    </ul>
+                    <a role="button" class="d-flex align-items-center px-3">
+                        <img src="../0806/切版練習/images/setting.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="banner  position-relative">
+        <div class="banner-mask position-absolute"></div>
+        <div class="position-relative banner-con">
+            <div class="container">
+                <div class="slogan text-center">
+                    <img class="logo-big" src="../0806/切版練習/images/logo_icon_g.svg" alt="">
+                    <h1 class="display-4 mt-3">煩惱髮型嗎</h1>
+                    <!--  display heading—a larger, slightly more opinionated heading style. -->
+                    <h2 class="h5">給你最多髮型靈感及優秀設計師</h2>
+                </div>
+                <div class="search-area d-flex text-nowrap">
+                    <div class="search-place d-flex align-items-center">
+                        <img src="../0806/切版練習/images/icon_searchbar_location.png" alt=""> 找地區
+                    </div>
+                    <input type="text" class="search-input">
+                    <button class="btn btn-primary"><img src="../0806/切版練習/images/icon_searchbar_search.png"
+                            alt="">去逛逛</button>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="container">
+                    <div class="row justify-content-center text-center text-white">
+                        <div class="col-lg-3">
+                            <img src="../0806/切版練習/images/icon_search.svg" alt="">
+                            <h6>在地設計師作品<br>輕鬆找</h6>
+                        </div>
+                        <div class="col-lg-3">
+                            <img src="../0806/切版練習/images/icon_fashion.svg" alt="">
+                            <h6>流行髮型<br>一手掌握</h6>
+                        </div>
+                        <div class="col-lg-3">
+                            <img src="../0806/切版練習/images/icon_book.svg" alt="">
+                            <h6>即時溝通預約</h6>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <section>
+        <div class="theme">
+            <div class="container">
+                <div class="hot row justify-content-center text-center">
+                    <div class="col-12 p-5">
+                        <h2 class="h1">熱門主題
+                            <div class="line border-5 border-bottom  border-dark"></div>
+                        </h2>
+                    </div>
+
+                    <div class=" col-lg-3 col-sm-6 position-relative ">
+                        <img src="../0806/切版練習/images/14366_18.jpg" alt="">
+                        <div class="btn  btn-second position-absolute">
+                            <h5>油頭</h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6   position-relative  ">
+                        <img src="../0806/切版練習/images/22736_8.jpg" alt="">
+                        <div class="btn  btn-second position-absolute">
+                            <h5>灰色系</h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6    position-relative ">
+                        <img src="../0806/切版練習/images/9743_2.jpg" alt="">
+                        <div class="btn  btn-second position-absolute">
+                            <h5>大捲</h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6    position-relative ">
+                        <img src="../0806/切版練習/images/14366_18.jpg" alt="">
+                        <div class="btn  btn-second position-absolute">
+                            <h5>男孩髮型</h5>
+                        </div>
+                    </div>
+
+                    <div class="d-flex  justify-content-end">
+                        <button class="btn btn-primary px-3 ">more</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="trend-rwd row justify-content-center text-center">
+                    <div class="col-12 pb-5">
+                        <h2 class="h1">人氣設計師
+                            <div class="line border-5 border-bottom  border-dark"></div>
+                        </h2>
+                    </div>
+                    <div class="col-sm-6 ">
+                        <div class="position-relative ">
+                            <img src="../0806/切版練習/images/128141.jpg" alt="">
+                            <p>40則貼文<br>65人追蹤</p>
+                        </div>
+
+
+                    </div>
+                    <div class="col-sm-6   ">
+                        <div class="position-relative ">
+                            <img src="../0806/切版練習/images/138974.jpg" alt="">
+
+                            <p>88則貼文<br>172人追蹤</p>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-6  ">
+                        <div class="position-relative  ">
+                            <img src="../0806/切版練習/images/141965.jpg" alt="">
+
+                            <p>33則貼文<br>87人追蹤</p>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-6  ">
+                        <div class="position-relative  ">
+                            <img src="../0806/切版練習/images/9743_2.jpg" alt="">
+
+                            <p>81則貼文<br>57人追蹤</p>
+                        </div>
+
+                    </div>
+                    <div class="d-flex  justify-content-end pt-2 pb-5">
+                        <button class="btn btn-primary px-3 ">more</button>
+                    </div>
+
+                </div>
+            </div>
+            <div class="container">
+                <div class="trend row justify-content-center text-center">
+                    <div class="col-12 pb-5">
+                        <h2 class="h1">趨勢話題
+                            <div class="line border-5 border-bottom  border-dark"></div>
+                        </h2>
+                    </div>
+                    <div class="t col-lg-4 col-sm-12 justify-content-sm-center p-2 ">
+                        <div class="  card-1 position-relative ">
+                            
+
+                            <div
+                                class=" d-inline    position-absolute  section-mask d-flex  justify-content-center align-items-center  text-white ">
+                                <h4 class="fw-normal">
+                                    鬆感的瀏海！配上級捲的捲度！反而營造出出色的視覺
+                                </h4>
+                            </div>
+                        </div>
+                        
+
+
+                    </div>
+                    <div class="col-lg-4 col-sm-12 justify-content-sm-center p-2  ">
+                        <div class="  card-2 position-relative ">
+                            
+                            <div
+                            class="d-inline  position-absolute section-mask d-flex  justify-content-center align-items-center  text-white ">
+                            <h4 class="fw-normal">
+                                日系鬆鬆捲度，吹乾即可，霧面髮色
+                            </h4>
+                        </div>
+                        </div>
+                        
+
+
+                    </div>
+                    <div class="col-lg-4 col-sm-12 justify-content-sm-center p-2   ">
+                        <div class="  card-3 position-relative ">
+                            
+                            <div
+                            class="d-inline  position-absolute section-mask d-flex  justify-content-center align-items-center  text-white ">
+                            <h4 class="fw-normal">
+                                歐巴新寵，逗號瀏海你跟風了嗎？
+                            </h4>
+                        </div>
+                        </div>
+                        
+
+
+                    </div>
+                   
+                  
+                    <div class="d-flex  justify-content-end pt-2 pb-5">
+                        <button class="btn btn-primary px-3 ">more</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <footer>
+        <div class="phone">
+            <div class="container">
+                <div class="row  justify-content-center text-center">
+                    <div class="col-lg-3  col-sm-6  col-xs-6">
+
+                        <img src="../0806/切版練習/images/phones.png" alt="">
+
+
+
+                    </div>
+                    <div class="col-lg-3 mt-5 col-sm-6  col-xs-6">
+                        <h2 class="h1">快速找到好髮型
+                            <div class="line border-5 border-bottom  border-dark"></div>
+                        </h2>
+                        <div class="phone-logo d-flex mt-5">
+
+                            <img src="../0806/切版練習/images/btn_app_ios.png" alt="">
+
+                            <img src="../0806/切版練習/images/btn_app_android.png" alt="">
+
+
+                        </div>
+                        <h4 class="h6 mt-2 ">下載並註冊後就可以開始發表做品囉</h4>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="people  position-relative">
+            <div class="banner-mask position-absolute"></div>
+            <div class="position-relative banner-con">
+                <div class="container ">
+                    <div class="row justify-content-center align-items-center  d-flex">
+                        <div class="col-lg-4 ">
+                            <div class=" prove  text-center ">
+                                <p class="fs-4 mt-3 ">已有</p>
+                                <h1 class="display-1 ">635</h1>
+                                <p class="fs-4">位設計師</p>
+                                <!--  display heading—a larger, slightly more opinionated heading style. -->
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 ">
+                            <div class=" prove  text-center border-end-0">
+                                <p class="fs-4 mt-3 ">發表</p>
+
+                                <h1 class="display-1 ">4621</h1>
+                                <p class="fs-4">張髮型作品</p>
+                                <!--  display heading—a larger, slightly more opinionated heading style. -->
+
+
+
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+                <div class="container ">
+                    <div class="row justify-content-center ">
+                        <div class="col-lg-3  text-center ">
+                            <h2 class="h2 text-light fw-normal">優秀設計師募集中
+                                <div class="line border-5  border-bottom  border-white"></div>
+                            </h2>
+                        </div>
+                        <div class="col-lg-3 d-flex justify-content-center ">
+                            <div class="col-6  mx-1">
+                                <div class="btn  btn-third  align-items-center">
+                                    <p class="mb-0 fs-6">了解更多</p>
+                                </div>
+                            </div>
+                            <div class="col-6 mx-1 ">
+                                <div class="btn  btn-third  align-items-center ">
+                                    <p class="mb-0 fs-6 text">立即免費註冊</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="f-bottom mt-3 ">
+            <div class="container  ">
+                <div class="row justify-content-start d-flex justify-content-sm-center ">
+                    <div class="col-lg-6  ">
+
+                        <div>
+                            <p class=" text-center text-secondary"> <img class="f-logo1 "
+                                    src="../0806/切版練習/images/logo_icon_g.svg" alt="">
+                                HairMap美髮地圖團隊立志於打造出最貼心實用的美髮資訊交流社群，讓美好時光成為每個人生命中的美好時刻。</p>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-4  d-flex ">
+
+
+                        <div class="col-lg-6 col-sm-6 align-items-center ">
+                            <div class="mb-2">
+                                <img src="../0806/切版練習/images/email.svg" alt="">
+                                <a class="  " href="">聯絡我們</a>
+                            </div>
+                            <div class="">
+                                <img src="../0806/切版練習/images/facebook_g.svg" alt="">
+                                <a class="  " href="">粉絲專頁</a>
+                            </div>
+
+
+                        </div>
+                        <div class="col-lg-6 col-sm-6 align-items-center ">
+                            <div class="mb-2">
+                                <img src="../0806/切版練習/images/ios.svg" alt="">
+                                <a class=" " href="">iOS</a>
+                            </div>
+                            <div class="">
+                                <img src="../0806/切版練習/images/android.svg" alt="">
+                                <a class="  " href="">Android</a>
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+                    <div class="col-lg-2 justify-content-center ">
+
+                        <div class="col-sm-12">
+                            <div class="join justify-content-sm-center  position-relative">
+                                <img src="../0806/切版練習/images/btn_join.png" alt="">
+                                <p class="position-absolute"> 設計師加入</p>
+                            </div>
+
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="container mt-5 ">
+            <div class="row justify-content-center border-top border-4">
+                <div class="col-6 text-center">
+
+                    <p class="justify-content-center text-secondary"> Hairdodo.Inc&copy;2016.All Rights
+                        Reserved使用者條款與隱私權政策</p>
+
+                </div>
+            </div>
+        </div>
+
+    </footer>
+</body>
+
+</html>
