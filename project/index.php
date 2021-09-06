@@ -24,10 +24,10 @@
     header:{
      left:'prev,next today',
      center:'title',
-     right:'addEventButton,month,agendaWeek,agendaDay,listWeek'
+     right:'agendaWeek,agendaDay,listWeek'
     },
     
-    firstHour: 8,
+    
     events: 'load.php',
     defaultView: 'agendaWeek',
     selectable:true,
@@ -37,27 +37,21 @@
     end: '20:00', // an end time (6pm in this example)
                 dow: [ 1, 2, 3, 4,5,6,0 ] // days of week. an array of zero-based day of week integers (0=Sunday) (Monday-Thursday in this example)
             },
-    defaultEventMinutes:240,
+   
     minTime:"08:00:00",
     maxTime:"20:00:00",
     slotDuration:'04:00:00',
-    allDaySlot : false,
+    allDaySlot : false,//顯示全天選項
     eventDurationEditable:true,
-    displayEventEnd:true,
-//     businessHours: {
-//   // days of week. an array of zero-based day of week integers (0=Sunday)
-//   daysOfWeek: [ 1 ], // Monday - Thursday
+    displayEventEnd:true,//顯示結束日期
 
-//   startTime: '08:00', // a start time (10am in this example)
-//   endTime: '20:00', // an end time (6pm in this example)
-// },
     eventRender: function (event, element, view) {
-    element.find('.fc-title').append('<div class="hr-line-solid-no-margin"></div><span style="font-size: 10px">' + event.price+ '</span></div>');
+    element.find('.fc-title').append('<div class="hr-line-solid-no-margin"></div><span style="font-size: 10px">' + event.price+ '</span></div>');//顯示價錢
   
 },
 
     select: function(start, end)
-    {
+    {//彈跳視窗
     var title = prompt("Enter Event Title"); 
      var price=prompt("Enter Event price");
      if(title,price)
@@ -72,15 +66,16 @@
        data:{title:title, price:price, start:start, end:end},
        success:function()
        {
-        calendar.fullCalendar('refetchEvents');
+        calendar.fullCalendar('refetchEvents');//Refetches events from all sources and rerenders them on the screen.
+        
         alert("Added Successfully");
        }
       })
      }
     },
   
-    editable:true,
-    eventResize:function(event)
+    editable:true,//編輯效果
+    eventResize:function(event)//縮放效果
     {
      var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
      var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
@@ -98,7 +93,7 @@
      })
     },
 
-    eventDrop:function(event)
+    eventDrop:function(event)//拖曳效果
     {
      var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
      var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
@@ -117,7 +112,7 @@
      });
     },
 
-    eventClick:function(event)
+    eventClick:function(event)//事件點擊，設定為刪除
     {
      if(confirm("Are you sure you want to remove it?"))
      {
