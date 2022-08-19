@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/nes/tedtalk/static/css/main.073c9b0a.css",
+    "main.js": "/nes/tedtalk/static/js/main.c12ca835.js",
+    "static/js/787.6b5483d1.chunk.js": "/nes/tedtalk/static/js/787.6b5483d1.chunk.js",
+    "static/media/logo.svg": "/nes/tedtalk/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/nes/tedtalk/index.html",
+    "main.073c9b0a.css.map": "/nes/tedtalk/static/css/main.073c9b0a.css.map",
+    "main.c12ca835.js.map": "/nes/tedtalk/static/js/main.c12ca835.js.map",
+    "787.6b5483d1.chunk.js.map": "/nes/tedtalk/static/js/787.6b5483d1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.c12ca835.js"
+  ]
+}
