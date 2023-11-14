@@ -2,6 +2,8 @@
 import { useState, useEffect } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import Image from "next/image";
+import myImage from "../../public/Rectangle 19.png";
 
 const navigation = [
   { name: "首頁", href: "#" },
@@ -36,7 +38,7 @@ export default function Example() {
   return (
     <div>
       <header
-        className={`fixed inset-x-0 top-0 z-50 transition duration-300 ${
+        className={`fixed inset-x-0 top-0 z-50 transition duration-10 ${
           scrolled ? "lg:bg-white opacity-90 " : "bg-transparent "
         } `}
       >
@@ -178,12 +180,9 @@ export default function Example() {
         </Dialog>
       </header>
 
-      <div className="flex justify-between isolate px-6 pt-14 lg:px-8">
-        <p className="mt-6 text-lg font-bold leading-8 text-black">
-          我是鬥立翰，堅守正義、追求共融， 望與人類共同塑造更美好的明天。
-        </p>
+      <div className="flex justify-between isolate px-6 lg:px-8">
         <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-          <div className="relative mb-6">
+          <div className="mb-6">
             <div className="flex justify-start mb-6">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -355,6 +354,22 @@ export default function Example() {
                   fill="#222222"
                 />
               </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="29"
+                height="84"
+                viewBox="0 0 29 84"
+                fill="none"
+              >
+                <path
+                  d="M27.0383 62.8379H2.47949V83.7695H27.0383V62.8379Z"
+                  fill="#222222"
+                />
+                <path
+                  d="M28.9997 0.193359H0.738281V25.81L6.02784 59.7389H23.6346L28.9997 25.6589V0.193359Z"
+                  fill="#222222"
+                />
+              </svg>
             </div>
             <div className="lg:w-72">
               <p className="mt-6 text-lg font-bold leading-8 text-black">
@@ -378,6 +393,7 @@ export default function Example() {
             </div>
           </div>
         </div>
+        <Image src={myImage} class="h-auto max-w-full rounded-lg" alt="" />
         <div
           className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
           aria-hidden="true"
