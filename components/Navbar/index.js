@@ -179,12 +179,9 @@ export default function Example() {
       </header>
 
       <div className="flex justify-between isolate px-6 pt-14 lg:px-8">
-        <p className="mt-6 text-lg font-bold leading-8 text-black">
-          我是鬥立翰，堅守正義、追求共融， 望與人類共同塑造更美好的明天。
-        </p>
         <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
           <div className="relative mb-6">
-            <div className="flex justify-start mb-6">
+            <div className=" mb-6">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="84"
@@ -250,7 +247,7 @@ export default function Example() {
                 />
               </svg>
             </div>
-            <div className="flex justify-start">
+            <div className="">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="84"
@@ -378,6 +375,9 @@ export default function Example() {
             </div>
           </div>
         </div>
+        <p className="mt-6 text-lg font-bold leading-8 text-black">
+          我是鬥立翰，堅守正義、追求共融， 望與人類共同塑造更美好的明天。
+        </p>
         <div
           className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
           aria-hidden="true"
