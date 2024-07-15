@@ -17,12 +17,11 @@
 
 上線作品：<br>
 官網- 
-<a href="https://www.wj-ar.com/">wj-ar/</a>
+<a href="http://www.wj-ar.com/">wj-ar/</a>
 
 
-
-3D官網-
-<a href="https://wejump3d.wj-ar.com/room4-demo">wj-ar-3D/</a>
+3D官網-(目前網站修中)
+<a href="http://wejump3d.wj-ar.com/room4-demo">wj-ar-3D/</a>
 
 
 
